@@ -1,7 +1,291 @@
-<html>
-  <body>
-    <P>
-     This Website is Expired
-    </P>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instant Personal Loan - Call or WhatsApp</title>
+
+<style>
+
+body{
+font-family: Arial, Helvetica, sans-serif;
+margin:0;
+background:#f5f7fb;
+text-align:center;
+}
+
+.header{
+background:#0a58ca;
+color:white;
+padding:40px 20px;
+}
+
+h1{
+font-size:30px;
+margin-bottom:10px;
+}
+
+.subtitle{
+font-size:18px;
+margin-bottom:20px;
+}
+
+.benefits{
+font-size:18px;
+line-height:32px;
+margin-top:20px;
+}
+
+/* Pulse animation */
+@keyframes pulse{
+0%{transform:scale(1)}
+50%{transform:scale(1.08)}
+100%{transform:scale(1)}
+}
+
+.call-btn{
+display:inline-block;
+background:#28a745;
+color:white;
+padding:18px 35px;
+font-size:22px;
+border-radius:8px;
+text-decoration:none;
+font-weight:bold;
+margin-top:20px;
+animation:pulse 1.5s infinite;
+}
+
+.whatsapp-btn{
+display:inline-block;
+background:#25D366;
+color:white;
+padding:18px 35px;
+font-size:22px;
+border-radius:8px;
+text-decoration:none;
+font-weight:bold;
+margin-top:15px;
+}
+
+.section{
+padding:40px 20px;
+}
+
+.card{
+background:white;
+margin:15px auto;
+padding:25px;
+border-radius:10px;
+max-width:500px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.steps{
+font-size:18px;
+line-height:32px;
+}
+
+/* Sticky bar */
+.sticky-bar{
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+display:flex;
+z-index:1000;
+}
+
+.sticky-call{
+flex:1;
+background:#28a745;
+color:white;
+padding:18px;
+font-size:20px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.sticky-whatsapp{
+flex:1;
+background:#25D366;
+color:white;
+padding:18px;
+font-size:20px;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* Floating WhatsApp bubble */
+.whatsapp-float{
+position:fixed;
+bottom:90px;
+right:20px;
+background:#25D366;
+color:white;
+font-size:28px;
+padding:15px 18px;
+border-radius:50%;
+text-decoration:none;
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
+z-index:1000;
+}
+
+/* Popup */
+.popup{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+align-items:center;
+justify-content:center;
+z-index:2000;
+}
+
+.popup-content{
+background:white;
+padding:30px;
+border-radius:10px;
+max-width:400px;
+text-align:center;
+}
+
+.popup-btn{
+display:inline-block;
+margin-top:15px;
+background:#28a745;
+color:white;
+padding:14px 25px;
+font-size:20px;
+border-radius:8px;
+text-decoration:none;
+}
+
+.popup-wa{
+display:inline-block;
+margin-top:10px;
+background:#25D366;
+color:white;
+padding:14px 25px;
+font-size:20px;
+border-radius:8px;
+text-decoration:none;
+}
+
+.close{
+margin-top:15px;
+display:block;
+color:#888;
+cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header" id="top">
+
+<h1>Instant Personal Loan</h1>
+
+<p class="subtitle">Approval in Just 5 Minutes</p>
+
+<div class="benefits">
+✔ Loan up to ₹2,00,000<br>
+✔ Minimal Documentation<br>
+✔ Instant Bank Transfer
+</div>
+
+<a href="tel:+919999999999" class="call-btn">📞 Call Now</a>
+<br>
+<a href="https://wa.me/919999999999" class="whatsapp-btn">💬 WhatsApp Now</a>
+
+</div>
+
+<div class="section">
+
+<div class="card">
+<h2>Why Contact Us?</h2>
+
+✔ Fast Loan Assistance<br>
+✔ Simple Process<br>
+✔ Dedicated Loan Expert
+</div>
+
+<div class="card">
+<h2>How It Works</h2>
+
+<div class="steps">
+1️⃣ Call or WhatsApp Our Expert<br>
+2️⃣ Share Basic Details<br>
+3️⃣ Get Loan Guidance Instantly
+</div>
+
+</div>
+
+<div class="card">
+<h2>1000+ Customers Assisted</h2>
+
+Speak with our loan expert now.
+
+<br><br>
+
+<a href="tel:+919999999999" class="call-btn">📞 Call Expert</a>
+<br>
+<a href="https://wa.me/919999999999" class="whatsapp-btn">💬 Chat on WhatsApp</a>
+
+</div>
+
+</div>
+
+<!-- Sticky buttons -->
+<div class="sticky-bar">
+<a href="tel:+919999999999" class="sticky-call">📞 Call</a>
+<a href="https://wa.me/919999999999" class="sticky-whatsapp">💬 WhatsApp</a>
+</div>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/919999999999" class="whatsapp-float">💬</a>
+
+<!-- Popup -->
+<div class="popup" id="callPopup">
+<div class="popup-content">
+
+<h2>Need Instant Loan Help?</h2>
+
+<p>Call or WhatsApp our loan expert now.</p>
+
+<a href="tel:+919999999999" class="popup-btn">📞 Call Now</a>
+<br>
+<a href="https://wa.me/919999999999" class="popup-wa">💬 WhatsApp</a>
+
+<span class="close" onclick="closePopup()">Close</span>
+
+</div>
+</div>
+
+<script>
+
+/* Popup after 5 seconds */
+setTimeout(function(){
+ document.getElementById("callPopup").style.display="flex";
+},5000);
+
+function closePopup(){
+ document.getElementById("callPopup").style.display="none";
+}
+
+/* Auto scroll trick for mobile */
+window.onload=function(){
+ if(window.innerWidth<768){
+  window.scrollTo({top:120,behavior:"smooth"});
+ }
+}
+
+</script>
+
+</body>
 </html>
