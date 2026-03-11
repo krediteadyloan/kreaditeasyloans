@@ -3,67 +3,65 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kredit Easy Loan - Personal Loan Assistance</title>
+<title>Kredit Easy Loan - Loan Assistance</title>
 
 <style>
-body{font-family:Arial,Helvetica,sans-serif;margin:0;background:#f5f7fb}
+body{font-family:Arial,Helvetica,sans-serif;margin:0;background:linear-gradient(180deg,#f5f7fb,#eef2ff)}
 
 /* HEADER */
-.header{background:#0a58ca;color:#fff;padding:15px 20px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-size:20px;font-weight:bold}
+.header{background:#0a58ca;color:#fff;padding:16px 22px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 10px rgba(0,0,0,0.15)}
+.logo{font-size:22px;font-weight:bold;letter-spacing:.5px}
 
 /* HAMBURGER */
-.menu-btn{font-size:26px;cursor:pointer}
+.menu-btn{font-size:28px;cursor:pointer}
 
 .nav{position:fixed;top:0;left:-260px;width:260px;height:100%;background:#111;color:#fff;padding-top:60px;transition:0.3s;z-index:2000}
-
 .nav a{display:block;color:#fff;padding:14px 22px;text-decoration:none;border-bottom:1px solid #333}
 .nav a:hover{background:#333}
-
 .closebtn{position:absolute;top:10px;right:18px;font-size:28px;cursor:pointer}
 
-.hero{text-align:center;padding:40px 20px;background:#0a58ca;color:#fff}
+/* HERO */
+.hero{text-align:center;padding:55px 20px;background:linear-gradient(135deg,#0a58ca,#3a7bfd);color:#fff}
+.hero h1{margin:10px 0;font-size:34px}
+.hero p{font-size:18px;max-width:700px;margin:auto}
 
-.hero h1{margin:10px 0;font-size:30px}
-.hero p{font-size:18px}
-
-.benefits{margin-top:20px;font-size:17px;line-height:30px}
+.benefits{margin-top:22px;font-size:17px;line-height:32px;background:rgba(255,255,255,0.12);display:inline-block;padding:18px 26px;border-radius:10px}
 
 /* BUTTONS */
 @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.08)}100%{transform:scale(1)}}
 
-.call-btn{display:inline-block;background:#28a745;color:#fff;padding:16px 30px;font-size:20px;border-radius:8px;text-decoration:none;margin-top:20px;animation:pulse 1.5s infinite}
+.call-btn{display:inline-block;background:#28a745;color:#fff;padding:16px 34px;font-size:20px;border-radius:10px;text-decoration:none;margin-top:24px;font-weight:bold;animation:pulse 1.5s infinite;box-shadow:0 4px 14px rgba(0,0,0,0.25)}
 
-.whatsapp-btn{display:inline-block;background:#25D366;color:#fff;padding:16px 30px;font-size:20px;border-radius:8px;text-decoration:none;margin-top:10px}
+.whatsapp-btn{display:inline-block;background:#25D366;color:#fff;padding:16px 34px;font-size:20px;border-radius:10px;text-decoration:none;margin-top:12px;font-weight:bold;box-shadow:0 4px 14px rgba(0,0,0,0.25)}
 
-.section{padding:40px 20px;text-align:center}
+.section{padding:55px 20px;text-align:center}
 
-.card{background:#fff;margin:15px auto;padding:25px;border-radius:10px;max-width:650px;box-shadow:0 4px 10px rgba(0,0,0,0.1)}
+.card{background:#fff;margin:20px auto;padding:30px;border-radius:14px;max-width:700px;box-shadow:0 8px 22px rgba(0,0,0,0.08);transition:0.3s}
+.card:hover{transform:translateY(-4px);box-shadow:0 10px 26px rgba(0,0,0,0.12)}
 
-.card h2{margin-top:0}
+.card h2{margin-top:0;font-size:26px;color:#0a58ca}
 
 .loan-info{font-size:17px;line-height:28px;text-align:left}
 
 /* CALCULATOR */
-.calc-box input{width:90%;padding:12px;margin:10px 0;font-size:16px}
+.calc-box input{width:92%;padding:13px;margin:10px 0;font-size:16px;border:1px solid #ddd;border-radius:6px}
 
-.calc-box button{padding:12px 20px;background:#0a58ca;color:#fff;border:none;font-size:16px;border-radius:6px;cursor:pointer}
+.calc-box button{padding:13px 22px;background:#0a58ca;color:#fff;border:none;font-size:16px;border-radius:8px;cursor:pointer;font-weight:bold}
 
-.result{margin-top:15px;font-size:18px;font-weight:bold}
+.result{margin-top:15px;font-size:20px;font-weight:bold;color:#0a58ca}
 
 /* STICKY BAR */
-.sticky-bar{position:fixed;bottom:0;width:100%;display:flex}
+.sticky-bar{position:fixed;bottom:0;width:100%;display:flex;font-weight:bold}
 
-.sticky-call{flex:1;background:#28a745;color:#fff;text-align:center;padding:16px;font-size:18px;text-decoration:none}
+.sticky-call{flex:1;background:#28a745;color:#fff;text-align:center;padding:17px;font-size:18px;text-decoration:none}
 
-.sticky-wa{flex:1;background:#25D366;color:#fff;text-align:center;padding:16px;font-size:18px;text-decoration:none}
+.sticky-wa{flex:1;background:#25D366;color:#fff;text-align:center;padding:17px;font-size:18px;text-decoration:none}
 
 /* FLOAT WHATSAPP */
-.whatsapp-float{position:fixed;right:20px;bottom:80px;background:#25D366;color:#fff;font-size:26px;padding:14px 16px;border-radius:50%;text-decoration:none}
+.whatsapp-float{position:fixed;right:20px;bottom:85px;background:#25D366;color:#fff;font-size:26px;padding:16px 18px;border-radius:50%;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,0.25)}
 
-footer{background:#111;color:#fff;text-align:center;padding:25px 15px;font-size:14px}
-footer a{color:#fff;margin:0 8px;text-decoration:none}
-
+footer{background:#111;color:#fff;text-align:center;padding:30px 18px;font-size:14px;margin-top:30px}
+footer a{color:#fff;margin:0 10px;text-decoration:none}
 </style>
 </head>
 
@@ -88,13 +86,15 @@ footer a{color:#fff;margin:0 8px;text-decoration:none}
 
 <!-- HERO -->
 <div class="hero">
-<h1>Kredit Easy Loan Assistance</h1>
-<p>Check eligibility and get guidance within minutes</p>
+<h1>Apply for Kredit Easy Loan Online</h1>
+<p>Apply Now for Easy Loan – Quick Loan Without Hassle. Fast, secure & paperless process for salaried and self‑employed applicants.</p>
 
 <div class="benefits">
-✔ Loan up to ₹2,00,000<br>
-✔ Quick eligibility check<br>
-✔ Minimal documentation
+✔ Apply online for Kredit Easy Loan<br>
+✔ Fast, secure & paperless process<br>
+✔ Loans for salaried & self‑employed<br>
+✔ Quick loan assistance without hassle<br>
+✔ Talk to our executive for guidance
 </div>
 
 <a href="tel:+917991382892" class="call-btn">📞 Call Now</a>
@@ -105,10 +105,10 @@ footer a{color:#fff;margin:0 8px;text-decoration:none}
 <!-- LOAN INFO -->
 <div class="section" id="loaninfo">
 <div class="card">
-<h2>Personal Loan Information</h2>
+<h2>Loan Information</h2>
 
 <div class="loan-info">
-<p>A personal loan is an unsecured loan that can be used for medical emergencies, education, travel, or other personal needs. Approval depends on factors such as income, credit score, and eligibility criteria set by financial institutions.</p>
+<p>A loan is an unsecured loan that can be used for medical emergencies, education, travel, or other personal needs. Approval depends on factors such as income, credit score, and eligibility criteria set by financial institutions.</p>
 
 <p><b>Typical Loan Features:</b></p>
 <ul>
@@ -144,13 +144,13 @@ footer a{color:#fff;margin:0 8px;text-decoration:none}
 <div class="section" id="about">
 <div class="card">
 <h2>About Us</h2>
-<p><b>Kredit Easy Loan</b> is an online loan assistance platform that helps users explore personal loan options and understand their eligibility before applying. Our mission is to simplify the loan discovery process by providing clear information, quick guidance, and direct support through phone and WhatsApp.</p>
+<p><b>Kredit Easy Loan</b> is an online loan assistance platform that helps users explore loan options and understand their eligibility before applying. Our mission is to simplify the loan discovery process by providing clear information, quick guidance, and direct support through phone and WhatsApp.</p>
 
-<p>We help users learn about different loan possibilities such as emergency loans, short-term personal loans, and small instant loans offered by various financial institutions and digital lending platforms.</p>
+<p>We help users learn about different loan possibilities such as emergency loans, short-term loans, and small instant loans offered by various financial institutions and digital lending platforms.</p>
 
 <p>Our assistance team helps with:</p>
 <ul style="text-align:left;max-width:500px;margin:auto">
-<li>Understanding personal loan eligibility</li>
+<li>Understanding loan eligibility</li>
 <li>Explaining loan terms and repayment options</li>
 <li>Guidance on documentation requirements</li>
 <li>Connecting users with suitable financial service providers</li>
@@ -195,14 +195,14 @@ footer a{color:#fff;margin:0 8px;text-decoration:none}
 <div class="card">
 <h2>Frequently Asked Questions</h2>
 
-<p><b>1. How fast can I get a personal loan?</b><br>
+<p><b>1. How fast can I get a loan?</b><br>
 Many digital lenders provide approval within minutes after eligibility verification.</p>
 
 <p><b>2. What is the maximum loan amount?</b><br>
 Loan amounts may range from ₹10,000 up to ₹2,00,000 depending on eligibility and lender policy.</p>
 
 <p><b>3. Do I need collateral?</b><br>
-Most personal loans are unsecured and usually do not require collateral.</p>
+Most loans are unsecured and usually do not require collateral.</p>
 
 <p><b>4. How is interest calculated?</b><br>
 Interest depends on the lender, credit profile, and loan tenure selected.</p>
@@ -241,7 +241,7 @@ No. Kredit Easy Loan provides loan information and assistance only. Final approv
 <div class="card">
 <h2>Customer Reviews</h2>
 <p><b>Rahul S.</b> ⭐⭐⭐⭐⭐<br>
-"I needed an urgent personal loan and the guidance I received here helped me understand the process quickly. Very helpful support."</p>
+"I needed an urgent loan and the guidance I received here helped me understand the process quickly. Very helpful support."</p>
 
 <p><b>Pooja M.</b> ⭐⭐⭐⭐⭐<br>
 "The loan information and EMI calculator made it easy to understand repayment before applying."</p>
@@ -329,7 +329,7 @@ document.getElementById("emiResult").innerText="Estimated Monthly EMI: ₹ "+emi
 "@type": "FAQPage",
 "mainEntity": [{
 "@type": "Question",
-"name": "How fast can I get a personal loan?",
+"name": "How fast can I get a loan?",
 "acceptedAnswer": {"@type": "Answer","text": "Many digital lenders may provide approval within minutes depending on eligibility and verification."}
 },{
 "@type": "Question",
