@@ -3,335 +3,281 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Instant Personal Loan - Call or WhatsApp</title>
+<title>Kredit Easy Loan - Personal Loan Assistance</title>
 
 <style>
+body{font-family:Arial,Helvetica,sans-serif;margin:0;background:#f5f7fb}
 
-body{
-font-family: Arial, Helvetica, sans-serif;
-margin:0;
-background:#f5f7fb;
-text-align:center;
-}
+/* HEADER */
+.header{background:#0a58ca;color:#fff;padding:15px 20px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:20px;font-weight:bold}
 
-.header{
-background:#0a58ca;
-color:white;
-padding:40px 20px;
-}
+/* HAMBURGER */
+.menu-btn{font-size:26px;cursor:pointer}
 
-h1{
-font-size:30px;
-margin-bottom:10px;
-}
+.nav{position:fixed;top:0;left:-260px;width:260px;height:100%;background:#111;color:#fff;padding-top:60px;transition:0.3s;z-index:2000}
 
-.subtitle{
-font-size:18px;
-margin-bottom:20px;
-}
+.nav a{display:block;color:#fff;padding:14px 22px;text-decoration:none;border-bottom:1px solid #333}
+.nav a:hover{background:#333}
 
-.benefits{
-font-size:18px;
-line-height:32px;
-margin-top:20px;
-}
+.closebtn{position:absolute;top:10px;right:18px;font-size:28px;cursor:pointer}
 
-/* Pulse animation */
-@keyframes pulse{
-0%{transform:scale(1)}
-50%{transform:scale(1.08)}
-100%{transform:scale(1)}
-}
+.hero{text-align:center;padding:40px 20px;background:#0a58ca;color:#fff}
 
-.call-btn{
-display:inline-block;
-background:#28a745;
-color:white;
-padding:18px 35px;
-font-size:22px;
-border-radius:8px;
-text-decoration:none;
-font-weight:bold;
-margin-top:20px;
-animation:pulse 1.5s infinite;
-}
+.hero h1{margin:10px 0;font-size:30px}
+.hero p{font-size:18px}
 
-.whatsapp-btn{
-display:inline-block;
-background:#25D366;
-color:white;
-padding:18px 35px;
-font-size:22px;
-border-radius:8px;
-text-decoration:none;
-font-weight:bold;
-margin-top:15px;
-}
+.benefits{margin-top:20px;font-size:17px;line-height:30px}
 
-.section{
-padding:40px 20px;
-}
+/* BUTTONS */
+@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.08)}100%{transform:scale(1)}}
 
-.card{
-background:white;
-margin:15px auto;
-padding:25px;
-border-radius:10px;
-max-width:500px;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
-}
+.call-btn{display:inline-block;background:#28a745;color:#fff;padding:16px 30px;font-size:20px;border-radius:8px;text-decoration:none;margin-top:20px;animation:pulse 1.5s infinite}
 
-.steps{
-font-size:18px;
-line-height:32px;
-}
+.whatsapp-btn{display:inline-block;background:#25D366;color:#fff;padding:16px 30px;font-size:20px;border-radius:8px;text-decoration:none;margin-top:10px}
 
-/* Sticky bar */
-.sticky-bar{
-position:fixed;
-bottom:0;
-left:0;
-width:100%;
-display:flex;
-z-index:1000;
-}
+.section{padding:40px 20px;text-align:center}
 
-.sticky-call{
-flex:1;
-background:#28a745;
-color:white;
-padding:18px;
-font-size:20px;
-text-decoration:none;
-font-weight:bold;
-}
+.card{background:#fff;margin:15px auto;padding:25px;border-radius:10px;max-width:650px;box-shadow:0 4px 10px rgba(0,0,0,0.1)}
 
-.sticky-whatsapp{
-flex:1;
-background:#25D366;
-color:white;
-padding:18px;
-font-size:20px;
-text-decoration:none;
-font-weight:bold;
-}
+.card h2{margin-top:0}
 
-/* Floating WhatsApp bubble */
-.whatsapp-float{
-position:fixed;
-bottom:90px;
-right:20px;
-background:#25D366;
-color:white;
-font-size:28px;
-padding:15px 18px;
-border-radius:50%;
-text-decoration:none;
-box-shadow:0 4px 10px rgba(0,0,0,0.3);
-z-index:1000;
-}
+.loan-info{font-size:17px;line-height:28px;text-align:left}
 
-/* Popup */
-.popup{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.6);
-align-items:center;
-justify-content:center;
-z-index:2000;
-}
+/* CALCULATOR */
+.calc-box input{width:90%;padding:12px;margin:10px 0;font-size:16px}
 
-.popup-content{
-background:white;
-padding:30px;
-border-radius:10px;
-max-width:400px;
-text-align:center;
-}
+.calc-box button{padding:12px 20px;background:#0a58ca;color:#fff;border:none;font-size:16px;border-radius:6px;cursor:pointer}
 
-.popup-btn{
-display:inline-block;
-margin-top:15px;
-background:#28a745;
-color:white;
-padding:14px 25px;
-font-size:20px;
-border-radius:8px;
-text-decoration:none;
-}
+.result{margin-top:15px;font-size:18px;font-weight:bold}
 
-.popup-wa{
-display:inline-block;
-margin-top:10px;
-background:#25D366;
-color:white;
-padding:14px 25px;
-font-size:20px;
-border-radius:8px;
-text-decoration:none;
-}
+/* STICKY BAR */
+.sticky-bar{position:fixed;bottom:0;width:100%;display:flex}
 
-.close{
-margin-top:15px;
-display:block;
-color:#888;
-cursor:pointer;
-}
+.sticky-call{flex:1;background:#28a745;color:#fff;text-align:center;padding:16px;font-size:18px;text-decoration:none}
+
+.sticky-wa{flex:1;background:#25D366;color:#fff;text-align:center;padding:16px;font-size:18px;text-decoration:none}
+
+/* FLOAT WHATSAPP */
+.whatsapp-float{position:fixed;right:20px;bottom:80px;background:#25D366;color:#fff;font-size:26px;padding:14px 16px;border-radius:50%;text-decoration:none}
+
+footer{background:#111;color:#fff;text-align:center;padding:25px 15px;font-size:14px}
+footer a{color:#fff;margin:0 8px;text-decoration:none}
 
 </style>
 </head>
 
 <body>
 
-<div class="header" id="top">
+<!-- SIDE MENU -->
+<div id="sideMenu" class="nav">
+<span class="closebtn" onclick="closeMenu()">×</span>
+<a href="#about">About Us</a>
+<a href="#loaninfo">Loan Information</a>
+<a href="#calculator">Loan Calculator</a>
+<a href="#contact">Contact Us</a>
+<a href="#privacy">Privacy Policy</a>
+<a href="#terms">Terms & Conditions</a>
+</div>
 
-<h1>Instant Personal Loan</h1>
+<!-- HEADER -->
+<div class="header">
+<div class="logo">Kredit Easy Loan</div>
+<div class="menu-btn" onclick="openMenu()">☰</div>
+</div>
 
-<p class="subtitle">Approval in Just 5 Minutes</p>
+<!-- HERO -->
+<div class="hero">
+<h1>Kredit Easy Loan Assistance</h1>
+<p>Check eligibility and get guidance within minutes</p>
 
 <div class="benefits">
 ✔ Loan up to ₹2,00,000<br>
-✔ Minimal Documentation<br>
-✔ Instant Bank Transfer
+✔ Quick eligibility check<br>
+✔ Minimal documentation
 </div>
 
-<a href="tel:+919999999999" class="call-btn">📞 Call Now</a>
+<a href="tel:+917991382892" class="call-btn">📞 Call Now</a>
 <br>
-<a href="https://wa.me/919999999999" class="whatsapp-btn">💬 WhatsApp Now</a>
-
+<a href="https://wa.me/917991382892" class="whatsapp-btn">💬 WhatsApp</a>
 </div>
 
-<div class="section">
-
+<!-- LOAN INFO -->
+<div class="section" id="loaninfo">
 <div class="card">
-<h2>Why Contact Us?</h2>
+<h2>Personal Loan Information</h2>
 
-✔ Fast Loan Assistance<br>
-✔ Simple Process<br>
-✔ Dedicated Loan Expert
+<div class="loan-info">
+<p>A personal loan is an unsecured loan that can be used for medical emergencies, education, travel, or other personal needs. Approval depends on factors such as income, credit score, and eligibility criteria set by financial institutions.</p>
+
+<p><b>Typical Loan Features:</b></p>
+<ul>
+<li>Loan amount: ₹10,000 – ₹2,00,000</li>
+<li>Tenure: 3 months – 36 months</li>
+<li>Interest rates vary depending on lender</li>
+<li>Quick approval process</li>
+</ul>
+
+<p>Contact our assistance team to understand available loan options and eligibility.</p>
 </div>
-
-<div class="card">
-<h2>How It Works</h2>
-
-<div class="steps">
-1️⃣ Call or WhatsApp Our Expert<br>
-2️⃣ Share Basic Details<br>
-3️⃣ Get Loan Guidance Instantly
-</div>
-
-</div>
-
-<div class="card">
-<h2>1000+ Customers Assisted</h2>
-
-Speak with our loan expert now.
-
-<br><br>
-
-<a href="tel:+919999999999" class="call-btn">📞 Call Expert</a>
-<br>
-<a href="https://wa.me/919999999999" class="whatsapp-btn">💬 Chat on WhatsApp</a>
-
-</div>
-
-</div>
-
-<!-- Sticky buttons -->
-<div class="sticky-bar">
-<a href="tel:+919999999999" class="sticky-call">📞 Call</a>
-<a href="https://wa.me/919999999999" class="sticky-whatsapp">💬 WhatsApp</a>
-</div>
-
-<!-- Floating WhatsApp -->
-<a href="https://wa.me/919999999999" class="whatsapp-float">💬</a>
-
-<!-- Popup -->
-<div class="popup" id="callPopup">
-<div class="popup-content">
-
-<h2>Need Instant Loan Help?</h2>
-
-<p>Call or WhatsApp our loan expert now.</p>
-
-<a href="tel:+919999999999" class="popup-btn">📞 Call Now</a>
-<br>
-<a href="https://wa.me/919999999999" class="popup-wa">💬 WhatsApp</a>
-
-<span class="close" onclick="closePopup()">Close</span>
 
 </div>
 </div>
 
-<script>
+<!-- CALCULATOR -->
+<div class="section" id="calculator">
+<div class="card calc-box">
+<h2>Loan EMI Calculator</h2>
 
-/* Popup after 5 seconds */
-setTimeout(function(){
- document.getElementById("callPopup").style.display="flex";
-},5000);
+<input type="number" id="amount" placeholder="Loan Amount (₹)">
+<input type="number" id="rate" placeholder="Interest Rate (%)">
+<input type="number" id="months" placeholder="Loan Tenure (Months)">
 
-function closePopup(){
- document.getElementById("callPopup").style.display="none";
-}
+<button onclick="calculateEMI()">Calculate EMI</button>
 
-/* Auto scroll trick for mobile */
-window.onload=function(){
- if(window.innerWidth<768){
-  window.scrollTo({top:120,behavior:"smooth"});
- }
-}
+<div class="result" id="emiResult"></div>
 
-</script>
+</div>
+</div>
 
-<!-- About Section -->
+<!-- ABOUT -->
 <div class="section" id="about">
 <div class="card">
 <h2>About Us</h2>
-<p>We provide loan assistance services to help users explore personal loan options from different financial service providers. Our team helps you understand eligibility, documentation, and the application process quickly through phone or WhatsApp support.</p>
+<p><b>Kredit Easy Loan</b> is an online loan assistance platform that helps users explore personal loan options and understand their eligibility before applying. Our mission is to simplify the loan discovery process by providing clear information, quick guidance, and direct support through phone and WhatsApp.</p>
+
+<p>We help users learn about different loan possibilities such as emergency loans, short-term personal loans, and small instant loans offered by various financial institutions and digital lending platforms.</p>
+
+<p>Our assistance team helps with:</p>
+<ul style="text-align:left;max-width:500px;margin:auto">
+<li>Understanding personal loan eligibility</li>
+<li>Explaining loan terms and repayment options</li>
+<li>Guidance on documentation requirements</li>
+<li>Connecting users with suitable financial service providers</li>
+</ul>
+
+<p>Kredit Easy Loan does not directly provide loans. Loan approval, interest rates, and final terms are decided by the respective lenders or financial institutions.</p>
+
+<p>Our goal is to make loan information simple, transparent, and easy to understand so users can make informed financial decisions.</p>
 </div>
 </div>
 
-<!-- Contact Section -->
+<!-- ELIGIBILITY -->
+<div class="section" id="eligibility">
+<div class="card">
+<h2>Basic Loan Eligibility</h2>
+<ul style="text-align:left;max-width:520px;margin:auto;line-height:28px">
+<li>Applicant must be 21–60 years old</li>
+<li>Must have a regular income source</li>
+<li>Valid mobile number and ID proof</li>
+<li>Indian resident with bank account</li>
+<li>Eligibility may vary depending on lender policies</li>
+</ul>
+</div>
+</div>
+
+<!-- DOCUMENTS -->
+<div class="section" id="documents">
+<div class="card">
+<h2>Documents Required</h2>
+<ul style="text-align:left;max-width:520px;margin:auto;line-height:28px">
+<li>Aadhaar Card / PAN Card</li>
+<li>Bank account details</li>
+<li>Income proof (salary slip or bank statement)</li>
+<li>Mobile number linked with Aadhaar</li>
+<li>Other documents may be required by the lender</li>
+</ul>
+</div>
+</div>
+
+<!-- FAQ -->
+<div class="section" id="faq">
+<div class="card">
+<h2>Frequently Asked Questions</h2>
+
+<p><b>1. How fast can I get a personal loan?</b><br>
+Many digital lenders provide approval within minutes after eligibility verification.</p>
+
+<p><b>2. What is the maximum loan amount?</b><br>
+Loan amounts may range from ₹10,000 up to ₹2,00,000 depending on eligibility and lender policy.</p>
+
+<p><b>3. Do I need collateral?</b><br>
+Most personal loans are unsecured and usually do not require collateral.</p>
+
+<p><b>4. How is interest calculated?</b><br>
+Interest depends on the lender, credit profile, and loan tenure selected.</p>
+
+<p><b>5. Is Kredit Easy Loan a lender?</b><br>
+No. Kredit Easy Loan provides loan information and assistance only. Final approval and loan terms are decided by financial institutions.</p>
+
+</div>
+</div>
+
+<!-- CONTACT -->
 <div class="section" id="contact">
 <div class="card">
 <h2>Contact Us</h2>
-<p>Phone: +91 99999 99999</p>
-<p>WhatsApp: +91 99999 99999</p>
-<p>Email: support@example.com</p>
-<p>Support Hours: 9 AM – 7 PM</p>
+<p>Phone: +91 79913 82892</p>
+<p>WhatsApp: +91 79913 82892</p>
+<p>Email: info@krediteasy-loans.online</p>
+<p>Address: 12a, Yelahanka Hobli Bengalur, Bengaluru, Karnataka 560064, India</p>
 </div>
 </div>
 
-<!-- Privacy Policy -->
+<!-- PRIVACY -->
 <div class="section" id="privacy">
 <div class="card">
 <h2>Privacy Policy</h2>
-<p>We respect your privacy. Any information shared during phone or WhatsApp communication is used only to assist with loan inquiries and is not sold to third parties. We may share required information with financial partners only when necessary to process your request.</p>
+<p>We respect user privacy. Information shared during communication is used only for loan assistance purposes and is not sold to third parties.</p>
 </div>
 </div>
 
-<!-- Terms -->
+<!-- TERMS -->
 <div class="section" id="terms">
 <div class="card">
 <h2>Terms & Conditions</h2>
-<p>This website provides loan assistance information only and does not directly provide loans. Loan approval, interest rates, and eligibility are determined by respective financial institutions. By using this website, you agree to contact us voluntarily for loan assistance.</p>
+<p>This website provides loan assistance information only. We are not a lender. Loan approval and terms depend on financial institutions.</p>
 </div>
 </div>
 
-<!-- Footer -->
-<footer style="background:#111;color:white;padding:25px 15px;margin-top:40px;font-size:14px">
+<!-- FLOAT BUTTON -->
+<a href="https://wa.me/917991382892" class="whatsapp-float">💬</a>
+
+<!-- STICKY BAR -->
+<div class="sticky-bar">
+<a href="tel:+917991382892" class="sticky-call">📞 Call</a>
+<a href="https://wa.me/917991382892" class="sticky-wa">💬 WhatsApp</a>
+</div>
+
+<footer>
 <p>© 2026 Loan Assistance Service</p>
-<p>
-<a href="#about" style="color:#fff;margin:0 10px">About Us</a> |
-<a href="#contact" style="color:#fff;margin:0 10px">Contact Us</a> |
-<a href="#privacy" style="color:#fff;margin:0 10px">Privacy Policy</a> |
-<a href="#terms" style="color:#fff;margin:0 10px">Terms & Conditions</a>
-</p>
+<a href="#about">About</a> |
+<a href="#contact">Contact</a> |
+<a href="#privacy">Privacy</a> |
+<a href="#terms">Terms</a>
 </footer>
+
+<script>
+function openMenu(){document.getElementById("sideMenu").style.left="0"}
+function closeMenu(){document.getElementById("sideMenu").style.left="-260px"}
+
+function calculateEMI(){
+let P=parseFloat(document.getElementById("amount").value)
+let r=parseFloat(document.getElementById("rate").value)/12/100
+let n=parseFloat(document.getElementById("months").value)
+
+if(!P||!r||!n){
+ document.getElementById("emiResult").innerText="Please fill all fields"
+ return
+}
+
+let emi=(P*r*Math.pow(1+r,n))/(Math.pow(1+r,n)-1)
+
+emi=emi.toFixed(2)
+
+document.getElementById("emiResult").innerText="Estimated Monthly EMI: ₹ "+emi
+}
+</script>
 
 </body>
 </html>
